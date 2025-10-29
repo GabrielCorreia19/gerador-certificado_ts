@@ -10,6 +10,7 @@
   background-color: #1a2856;
   cursor: pointer;
   gap: 8px;
+  font-weight: 600;
 }
 
 .custom-button:hover {
