@@ -6,8 +6,12 @@
       <i class="ph ph-arrow-left"></i>
       <p class="m-0">Voltar</p>
     </div>
-    <app-secondary-button></app-secondary-button>
+    <app-secondary-button
+      textoBotao="Download"
+      phClass="ph ph-download-simple"
+    ></app-secondary-button>
   </div>
+  @if(certificado) {
   <div class="certificado d-flex justify-content-center align-items-center">
     <img
       src="certificate/certificate_ribbon.png"
@@ -25,20 +29,18 @@
           <h1>CERTIFICADO DE CONCLUSÃO</h1>
           <p>Este certificado compora que</p>
         </div>
-        <p class="nome-aluno">Gabriel Correia Santos</p>
+        <p class="nome-aluno">{{ certificado.nome }}</p>
         <div>
           <p class="lista-atividade-titulo">
             Concluiu com sucesso as seguintes atividades:
           </p>
           <p class="lista-atividade">
-            Introdução ao Angular, Configuração com Angular CLI, Criação de
-            componentes reutilizáveis, Criação de um projeto com o Angular CLI,
-            Criação de um componente de página, Estrutura de um projeto Angular
-            com o Angular CLI, Consumo de APIs RESTful, Criação de um formulário
+            {{ certificado.atividades.join(", ") }}
           </p>
         </div>
       </div>
-      <p class="data-emissao">Emitido em: 20 de maio de 2022</p>
+      <p class="data-emissao">Emitido em: {{ certificado.dataEmissao }}</p>
     </div>
   </div>
+  }
 </div>
