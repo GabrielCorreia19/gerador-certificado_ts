@@ -20,6 +20,5 @@ export class AppComponent implements OnInit {
     this.certificadoService.certificados = certificados
       ? JSON.parse(certificados)
       : [];
-    console.log(this.certificadoService.certificados);
   }
 }
